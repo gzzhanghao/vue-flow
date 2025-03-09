@@ -55,7 +55,11 @@ export interface FlowEvents {
   connectStart: {
     event?: MouseEvent | TouchEvent
   } & OnConnectStartParams
-  connectEnd: MouseEvent | TouchEvent | undefined
+  connectEnd: {
+    event?: MouseEvent | TouchEvent
+    isValid: boolean | null
+    connection: Connection | null
+  }
   clickConnectStart: {
     event?: MouseEvent | TouchEvent
   } & OnConnectStartParams

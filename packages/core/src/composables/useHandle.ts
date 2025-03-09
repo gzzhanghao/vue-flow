@@ -283,7 +283,11 @@ export function useHandle({
           }
         }
 
-        emits.connectEnd(event)
+        emits.connectEnd({
+          event,
+          isValid,
+          connection,
+        })
 
         if (edgeUpdaterType) {
           onEdgeUpdateEnd?.(event)
